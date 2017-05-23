@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class TwoFragment extends Fragment {
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

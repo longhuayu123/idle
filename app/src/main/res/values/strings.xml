@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">idle</string>
+    <string name="Recommend">Recommend</string>
+    <string name="Books">Books</string>
+    <string name="Music">Music</string>
+    <string name="MyHome">MyHome</string>
 </resources>
