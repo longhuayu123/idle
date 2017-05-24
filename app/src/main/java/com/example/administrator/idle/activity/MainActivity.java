@@ -1,4 +1,4 @@
-package com.example.administrator.idle;
+package com.example.administrator.idle.activity;
 
 
 import android.os.Bundle;
@@ -11,11 +11,15 @@ import android.view.View;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.example.administrator.idle.adapter.MyAdapter;
+import com.example.administrator.idle.R;
+import com.example.administrator.idle.fragment.FourFragment;
+import com.example.administrator.idle.fragment.OneFragment;
+import com.example.administrator.idle.fragment.ThreeFragment;
+import com.example.administrator.idle.fragment.TwoFragment;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.example.administrator.idle.R.id.bottom_navigation_bar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
         bottomNavigationBar.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener() {
             @Override
             public void onTabSelected(int position) {
@@ -82,7 +84,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        //给Fragment设置数据
+
+        //给viewpager设置数据
         list.add(new OneFragment());
         list.add(new TwoFragment());
         list.add(new ThreeFragment());
@@ -97,8 +100,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         //添加并设置图标、图标的颜色和文字
-        bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.ic_launcher, R.string.Recommend).setActiveColorResource(R.color.	MediumOrchid))
-                .addItem(new BottomNavigationItem(R.mipmap.ic_launcher, R.string.Books).setActiveColorResource(R.color.DarkBlue))
+        bottomNavigationBar.addItem(new BottomNavigationItem(R.mipmap.ic_launcher, R.string.Recommend).setActiveColorResource(R.color.DarkBlue))
+                .addItem(new BottomNavigationItem(R.mipmap.ic_launcher, R.string.Books).setActiveColorResource(R.color.MediumOrchid))
                 .addItem(new BottomNavigationItem(R.mipmap.ic_launcher, R.string.Music).setActiveColorResource(R.color.DarkCyan))
                 .addItem(new BottomNavigationItem(R.mipmap.ic_launcher, R.string.MyHome).setActiveColorResource(R.color.Green))
                 .setFirstSelectedPosition(0)//设置默认选择item
@@ -106,15 +109,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         //设置选中第一个添加的按钮
-        bottomNavigationBar.selectTab(0, false);
+        bottomNavigationBar.selectTab(0, true);
         //显示ViewPager中添加的第一个页面
         viewPager.setCurrentItem(0);
-        bottomNavigationBar.selectTab(1, false);
-        viewPager.setCurrentItem(1);
-        bottomNavigationBar.selectTab(2, false);
-        viewPager.setCurrentItem(2);
-        bottomNavigationBar.selectTab(3, false);
-        viewPager.setCurrentItem(3);
+
 
     }
 
